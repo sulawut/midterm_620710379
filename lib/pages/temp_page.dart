@@ -131,7 +131,24 @@ class _TempPageState extends State<TempPage> {
       appBar: AppBar(
         title: const Text('Midterm Exam'),
       ),
-      body: Center(
+
+      body: Container(
+        decoration: BoxDecoration(
+          color: Colors.white, //สีพื้นหลังของ Container
+          border: Border.all(
+            width: 5.0,
+            color: Colors.orange.shade200,
+          ),
+          borderRadius: BorderRadius.circular(8.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: const Offset(0, 3),
+            ),
+          ],
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -144,6 +161,7 @@ class _TempPageState extends State<TempPage> {
               ),
             ),
             // Callback function
+            SizedBox(height: 20),
             ElevatedButton(
               onPressed: Click_CtoF,
               child: const Text('Celsius to Fahrenheit'),
